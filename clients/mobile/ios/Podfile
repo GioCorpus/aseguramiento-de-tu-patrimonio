@@ -1,0 +1,27 @@
+platform :ios, '13.0'
+prepare_react_native_project!
+
+target 'AseguraPatrimonio' do
+  config = use_native_modules!
+
+  # Flags to enable new architecture or specific features
+  use_react_native!(
+    :path => "../node_modules/react-native",
+    # Enable hermes engine by default for better performance
+    :hermes_enabled => true
+  )
+
+  target 'AseguraPatrimonioTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  post_install do |installer|
+    # React Native post-install hooks
+    react_native_post_install(
+      installer,
+      # Set `mac_catalyst_enabled` to `true` if you want to support Mac Catalyst
+      :mac_catalyst_enabled => false
+    )
+  end
+end

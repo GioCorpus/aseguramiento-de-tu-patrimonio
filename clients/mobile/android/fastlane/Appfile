@@ -1,0 +1,2 @@
+json_key_file("fastlane-google-service-account.json") # Path to your service account JSON file
+package_name("com.asegurapatrimonio.app") # The package name of your Google Play Store app

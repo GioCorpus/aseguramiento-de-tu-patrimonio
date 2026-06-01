@@ -1,0 +1,5 @@
+app_identifier("com.asegurapatrimonio.app") # The Bundle ID of your iOS App
+apple_id("developer@asegurapatrimonio.com")  # Your Apple ID Developer account email
+
+itc_team_id("120984732") # App Store Connect Team ID (optional)
+team_id("AB12CD34EF")    # Developer Portal Team ID (optional)

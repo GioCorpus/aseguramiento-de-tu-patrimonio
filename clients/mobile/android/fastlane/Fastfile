@@ -1,0 +1,36 @@
+default_platform(:android)
+
+platform :android do
+  desc "Compilar archivo Android App Bundle (AAB) de producción y subirlo a la pista de pruebas internas de Google Play"
+  lane :beta do
+    # 1. Compilar bundle AAB firmado mediante Gradle wrapper
+    gradle(
+      task: "bundle",
+      build_type: "Release"
+    )
+
+    # 2. Subir binario compilado a la consola de Google Play (Pista interna)
+    supply(
+      track: "internal",
+      aab: "./app/build/outputs/bundle/release/app-release.aab",
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
+  end
+
+  desc "Compilar y subir archivo final a producción en Google Play Console"
+  lane :release do
+    # 1. Compilar bundle AAB final de producción
+    gradle(
+      task: "bundle",
+      build_type: "Release"
+    )
+
+    # 2. Subir directamente a la pista de producción
+    supply(
+      track: "production",
+      aab: "./app/build/outputs/bundle/release/app-release.aab",
+      metadata_path: "./fastlane/metadata"
+    )
+  end
+end
