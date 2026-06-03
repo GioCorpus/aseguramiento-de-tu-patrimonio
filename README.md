@@ -1,4 +1,4 @@
-# Asegura tu Patrimonio - Architecture Documentation
+# Aseguramiento de tu patrimonio - Architecture Documentation
 
 ## Overview
 
