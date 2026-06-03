@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Asegura tu Patrimonio** is an insurance management platform that enables users to manage vehicle insurance policies, process payments, and handle document verification. The system follows a microservices architecture pattern with clear separation of concerns.
+**Aseguramiento de tu Patrimonio** is an insurance management platform that enables users to manage vehicle insurance policies, process payments, and handle document verification. The system follows a microservices architecture pattern with clear separation of concerns.
 
 ## System Architecture Diagram
 
